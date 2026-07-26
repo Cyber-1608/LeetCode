@@ -1,8 +1,9 @@
 class Solution:
-    def maximumProduct(self, nums: List[int]) -> int:
+    def maximumProduct(self, nums: list[int]) -> int:
         nums.sort(reverse=True)
-        product=1
-        for i in range(3): 
-            product=product * nums[i]
-            i=+1
-        return product
+        product1=nums[0]*nums[1]*nums[2]
+        product2=nums[-1]*nums[-2]*nums[0]
+        if product1>product2:
+            return product1
+        else:
+            return product2
